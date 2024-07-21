@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #da2519d4;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+header {
+    background-color: #595636b9;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Cursive';
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #0fe300;
+}
+
+.nav-links {
+    margin-right: 8rem;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: #0fe300;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #0bc200;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #0fe300;
+    transition: all 0.3s;
+}
+
+.main-div {
+    margin-top: 6rem;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.main-div h1 {
+    font-size: 2.5rem;
+    color: rgb(192, 219, 188);
+    font-weight: 700;
+    animation: slideIn 2s ease-in-out;
+}
+
+.main-div p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.main-div button {
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: #0fe300;
+    color: #595636b9;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.main-div button:hover {
+    background-color: #0bc200;
+    transform: scale(1.05);
+}
+
+.f1 {
+    padding: 1rem;
+    background-color: #595636b9;
+    color: #0fe300;
+    text-align: center;
+    font-style: italic;
+}
+
+.div-2 a {
+    color: #e9eaeb;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.div-2 a:hover {
+    color: #ffffff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #595636b9;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .burger {
+        display: flex;
+    }
+}
